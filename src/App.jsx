@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import CandidatesList from './pages/CandidatesList.jsx';
 import CandidatesSingle from './pages/CandidatesSingle.jsx';
 import CandidatesDashboard from './pages/CandidatesDb.jsx';
-import CompanyProfile from './pages/CompanyProfile';
+import CompanyProfile from './pages/MyProfile.jsx';
 // import ManageJobs from './pages/ManageJobs'; // Import the new component
 ;
 import './App.css';

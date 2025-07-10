@@ -1,11 +1,11 @@
 // CompanyProfile.js (Updated for single-select Industry Type)
 import React from 'react';
-import './CompanyProfile.css'; // Make sure your CSS file is correctly linked
+import './MyProfile.css'; // Make sure your CSS file is correctly linked
 
-const CompanyProfile = () => {
+const MyProfile = () => {
   return (
     <div className="company-profile-container">
-      <h2>Company Profile!</h2>
+      <h2>My Profile!</h2>
       <p>Ready to jump back in?</p>
 
       <div className="profile-section">
@@ -23,21 +23,12 @@ const CompanyProfile = () => {
             </small>
           </div>
 
-          <div className="upload-box">
-            <div className="upload-area">
-              <i className="fas fa-upload upload-icon"></i>
-              <p>Browse Cover</p>
-            </div>
-            <small>
-              Max file size is 1MB, Minimum dimension: 330x300 <br />
-              Suitable files: .jpg & .png
-            </small>
-          </div>
+          
         </div>
 
         {/* Company Information Section */}
         <div className="form-section">
-          <h4>Company Information</h4>
+          <h4>Contact Information</h4>
           <div className="form-group">
             <label htmlFor="companyName">Company Name</label>
             <input type="text" id="companyName" placeholder="Enter company name" />
@@ -128,4 +119,4 @@ const CompanyProfile = () => {
   );
 };
 
-export default CompanyProfile;
+export default MyProfile;

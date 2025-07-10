@@ -2,11 +2,15 @@
 import React from 'react';
 import './ManageJobs.css';
 import { NavLink } from 'react-router-dom';
+import im1 from '../assets/im1.png';
+import im2 from '../assets/im2.png';
+import im3 from '../assets/im3.png';
+
 
 const jobListings = [
   {
     id: 1,
-    logo: 'https://placehold.co/40x40/f0f8ff/0056b3?text=S', // Placeholder for Superio-like logo
+    logo: im1, // Placeholder for Superio-like logo
     title: 'Software Engineer (Android), Libraries',
     segment: 'Segment',
     location: 'London, UK',
@@ -17,7 +21,7 @@ const jobListings = [
   },
   {
     id: 2,
-    logo: 'https://placehold.co/40x40/f0f8ff/0056b3?text=R', // Placeholder for Recruiting Coordinator logo
+    logo: im2, // Placeholder for Recruiting Coordinator logo
     title: 'Recruiting Coordinator',
     segment: 'Segment',
     location: 'London, UK',
@@ -28,7 +32,7 @@ const jobListings = [
   },
   {
     id: 3,
-    logo: 'https://placehold.co/40x40/f0f8ff/0056b3?text=L', // Placeholder for LinkedIn-like logo
+    logo: im3, // Placeholder for LinkedIn-like logo
     title: 'Product Manager, Studio',
     segment: 'Segment',
     location: 'London, UK',
@@ -44,7 +48,7 @@ const ManageJobs = () => {
   return (
     <div className="manage-jobs-container">
       <div className="manage-jobs-header">
-        <h2>My Job Listings</h2>
+        <h2>My Applied Jobs</h2>
         <div className="dropdown-container">
           <span className="dropdown-label">Last 6 Months</span>
           <i className="fas fa-chevron-down dropdown-icon"></i>
@@ -55,9 +59,8 @@ const ManageJobs = () => {
         <table className="job-listings-table">
           <thead>
             <tr>
-              <th>Title</th>
-              <th>Applications</th>
-              <th>Created & Expired</th>
+              <th>Job Title</th>
+              <th>Date Applied</th>
               <th>Status</th>
               <th>Action</th>
             </tr>
@@ -77,9 +80,9 @@ const ManageJobs = () => {
                     </div>
                   </div>
                 </td>
-                <td className="job-applications">
+                {/* <td className="job-applications">
                   <NavLink to="#" className="applications-link">{job.applications}+ Applied</NavLink>
-                </td>
+                </td> */}
                 <td className="job-dates">
                   <p>Created: {job.createdDate}</p>
                   <p>Expired: {job.expiredDate}</p>
