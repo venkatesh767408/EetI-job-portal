@@ -1,38 +1,3 @@
-// import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
-// import EmployersDropdown from './EmployersDropdown';
-// import './Navbar.css';
-
-// const Navbar = () => {
-//   const [showDropdown, setShowDropdown] = useState(false);
-
-//   return (
-//     <nav className="navbar">
-//       <div className="navbar-left">
-//         <div className="logo">
-//           <Link to="/">Superio</Link>
-//         </div>
-//         <ul className="nav-links">
-//           <li><Link to="/">Home</Link></li>
-//           <li><Link to="/find-jobs">Find Jobs</Link></li>
-//           <li
-//             className="dropdown"
-//             onMouseEnter={() => setShowDropdown(true)}
-//             onMouseLeave={() => setShowDropdown(false)}
-//           >
-//             <button className="dropdown-button">Employers ▾</button>
-//             {showDropdown && <EmployersDropdown />}
-//           </li>
-//           <li><Link to="/candidates">Candidates</Link></li>
-//           <li><Link to="/blog">Blog</Link></li>
-//         </ul>
-//       </div>
-//       <div className="navbar-right">
-//         <button className="login-btn">Login / Register</button>
-//       </div>
-//     </nav>
-//   );
-// };
 
 // export default Navbar;
  import React, { useState } from 'react';
