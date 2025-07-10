@@ -1,0 +1,233 @@
+/* ManageJobs.css */
+
+.manage-jobs-container {
+  padding: 30px;
+  background-color: #f7faff;
+  min-height: calc(100vh - 120px); /* Adjust based on Navbar/Footer height */
+  max-width: 1100px; /* Increased max-width to accommodate table */
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.manage-jobs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.manage-jobs-header h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #0056b3;
+  margin: 0; /* Reset margin */
+}
+
+.dropdown-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.dropdown-label {
+  font-size: 0.9em;
+  color: #555;
+  margin-right: 8px;
+}
+
+.dropdown-icon {
+  font-size: 0.8em;
+  color: #777;
+}
+
+.job-listings-table-wrapper {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
+  overflow-x: auto; /* Ensures table is scrollable on smaller screens */
+}
+
+.job-listings-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.job-listings-table th,
+.job-listings-table td {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+.job-listings-table th {
+  background-color: #f0f4f8; /* Light blueish background for headers */
+  color: #333;
+  font-weight: bold;
+  font-size: 0.95em;
+  text-transform: uppercase;
+}
+
+.job-listings-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.job-title-cell {
+  width: 40%; /* Allocate more space for title */
+}
+
+.job-title-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.company-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px; /* Slightly rounded corners for logos */
+  object-fit: cover;
+  flex-shrink: 0; /* Prevent logo from shrinking */
+}
+
+.job-title-content h4 {
+  margin: 0;
+  font-size: 1.1em;
+  color: #333;
+  font-weight: 600;
+}
+
+.job-meta {
+  font-size: 0.85em;
+  color: #777;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.job-meta .fas {
+  font-size: 0.9em;
+  color: #999;
+}
+
+.job-applications .applications-link {
+  color: #007bff; /* Blue for links */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.job-applications .applications-link:hover {
+  text-decoration: underline;
+}
+
+.job-dates p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #666;
+  line-height: 1.4;
+}
+
+.job-status .status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status-active {
+  background-color: #e6ffe6; /* Light green */
+  color: #28a745; /* Green text */
+}
+
+/* Add other status styles if needed, e.g., for 'Expired', 'Pending' */
+.status-expired {
+  background-color: #ffe6e6;
+  color: #dc3545;
+}
+
+.job-actions-cell {
+  width: 15%; /* Space for action icons */
+}
+
+.action-icons {
+  display: flex;
+  gap: 10px;
+  justify-content: center; /* Center icons in the cell */
+}
+
+.action-icons .fas {
+  font-size: 1.1em;
+  color: #007bff; /* Blue for action icons */
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.action-icons .fas:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .job-listings-table-wrapper {
+    padding: 15px;
+  }
+
+  .job-listings-table th,
+  .job-listings-table td {
+    padding: 10px;
+  }
+
+  .job-title-cell {
+    width: auto; /* Allow content to dictate width */
+  }
+
+  .job-title-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .company-logo {
+    margin-bottom: 5px;
+  }
+
+  .job-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .action-icons {
+    justify-content: flex-start;
+  }
+}
+
+.no-jobs-message {
+    text-align: center;
+    color: #888;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+.no-jobs-message a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.no-jobs-message a:hover {
+    text-decoration: underline;
+}

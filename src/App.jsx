@@ -1,35 +1,62 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import React from 'react';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import Navbar from './components/Navbar';
+// import '@fortawesome/fontawesome-free/css/all.min.css';
+
+// import Footer from './components/Footer';
+
+// import EmployersList from './pages/EmployersList';
+// import EmployersSingle from './pages/EmployersSingle';
+// import EmployersDashboard from './pages/EmployersDashboard';
+
+// function App() {
+//   return (
+//     <Router>
+//       <Navbar />
+//       <Routes>
+//         <Route path="/employers/list" element={<EmployersList />} />
+//         <Route path="/employers/single" element={<EmployersSingle />} />
+//         <Route path="/employers/dashboard" element={<EmployersDashboard />} />
+//       </Routes>
+//       <Footer />
+//     </Router>
+//   );
+// }
+
+// export default App;
+// App.jsx
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import EmployersList from './pages/EmployersList';
+import EmployersSingle from './pages/EmployersSingle';
+import EmployersDashboard from './pages/EmployersDashboard';
+import CompanyProfile from './pages/CompanyProfile';
+// import ManageJobs from './pages/ManageJobs'; // Import the new component
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import './App.css';
+import ManageJobs from './pages/ManageJobs.JSX';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+      <div className="app-wrapper">
+        <Navbar />
+        <div className="content-wrapper">
+          <Routes>
+            <Route path="/employers/list" element={<EmployersList />} />
+            <Route path="/employers/single" element={<EmployersSingle />} />
+            <Route path="/employers/dashboard" element={<EmployersDashboard />} />
+            <Route path="/employers/profile" element={<CompanyProfile />} />
+            <Route path="/employers/manage-jobs" element={<ManageJobs />} /> {/* New Route */}
+          </Routes>
+        </div>
+        <Footer />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;
