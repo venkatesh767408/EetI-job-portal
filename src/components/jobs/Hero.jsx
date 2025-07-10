@@ -1,6 +1,6 @@
 import React from "react";
 import './jobs.css';
-const hero = () => {
+const Hero = () => {
   return (
     <>
       <div className="hero-container">
@@ -15,4 +15,4 @@ const hero = () => {
   );
 };
 
-export default hero;
+export default Hero;

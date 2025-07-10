@@ -27,9 +27,26 @@
   font-weight: 500;
 }
 /* job-card css */
-.job-wrapper {
+.screen-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 24px;
   padding: 24px;
-  width: fit-content;
+  align-items: flex-start;
+}
+
+.filter-section {
+  background-color: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  height: 100%;
+  min-height: 400px;
+  padding: 16px;
+}
+
+.job-wrapper {
+  padding: 0;
+  width: 100%;
 }
 
 .job-header {
@@ -62,6 +79,7 @@
   display: flex;
   gap: 16px;
   align-items: flex-start;
+  
 }
 
 .company-logo {
@@ -146,4 +164,33 @@
 .bookmark-icon span.active {
   color: red;
   border-color: red;
+}
+/* filter section */
+.filter-section {
+  background-color: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 260px;
+}
+
+.filter-section h3 {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #2d3748;
+  font-weight: 600;
+}
+
+.filter-section input[type="text"],
+.filter-section input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e0;
+}
+
+.filter-section input[type="radio"] {
+  margin-right: 6px;
 }
