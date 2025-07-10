@@ -1,0 +1,565 @@
+/* General Body and Container Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  background-color: #f5f5f5; /* Light background for the overall page */
+  line-height: 1.6;
+  color: #333;
+}
+
+/* This is the main container for the entire page content */
+.candidates-single-page {
+  /* Removed max-width and margin: 0 auto here to allow elements inside to control their width */
+  /* This container will now naturally take 100% width, allowing its children to be styled */
+  background-color: #f5f5f5; /* Set the page background here to match body, if header spans full width */
+  min-height: 100vh;
+}
+
+/* Top Header Section (Employer Header) */
+.employer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f1f5ff; /* Light blue background */
+  padding: 20px 30px; /* Consistent padding */
+  border-radius: 0; /* No border-radius if it spans full width */
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  /* Ensure it takes full width */
+  width: 100%;
+  box-sizing: border-box; /* Include padding in the width */
+}
+
+.company-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: contain;
+  background: white;
+  padding: 5px;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.company-details {
+  flex-grow: 1;
+  margin-left: 20px;
+  min-width: 250px;
+  /* Align items to start, not center, for text alignment */
+  align-items: flex-start; /* Corrected to align text left */
+}
+
+.company-details h2 {
+  margin: 0 0 8px 0; /* Adjusted margin */
+  font-size: 28px; /* Slightly larger heading */
+  color: #222;
+}
+
+.company-details p {
+  margin: 4px 0;
+  font-size: 15px;
+  color: #666;
+}
+
+.open-jobs-btn {
+  margin-top: 10px;
+  background-color: #e0ecff;
+  color: #0056d2;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.open-jobs-btn:hover {
+  background-color: #cdd9ed;
+}
+
+.private-message-btn {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 20px; /* Add space from company details */
+  flex-shrink: 0; /* Prevent shrinking */
+  transition: background-color 0.3s ease;
+}
+
+.private-message-btn:hover {
+  background-color: #0a58ca;
+}
+
+/* Main Content Area Layout - This needs to be contained and centered */
+.main-content-area {
+  display: flex;
+  gap: 30px; /* Space between main content and sidebar */
+  max-width: 1200px; /* Max width for the content area */
+  margin: 0 auto; /* Center the content area */
+  padding: 30px; /* Padding inside the content area */
+  background-color: #fff; /* White background for the content block */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08); /* Softer shadow */
+  border-radius: 8px; /* Slightly rounded corners for the content block */
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+
+.candidate-details-section {
+  flex: 2; /* Takes up more space */
+  display: flex; /* Enable flex for internal sections */
+  flex-direction: column; /* Stack sections vertically */
+  gap: 30px; /* Space between "About", "Education", "Work" sections */
+}
+
+.section-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  font-weight: 600;
+}
+
+/* Candidates About Section */
+/* Removed .employer-single-page class here as it was conflicting/redundant with .candidates-single-page */
+.candidates-about-section { /* Renamed for clarity to match JSX */
+  padding: 0; /* Removed padding here as main-content-area has it */
+  background-color: #fff; /* Ensure it's white inside the main content block */
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+
+.about-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 350px; /* Adjust height as needed */
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for the image */
+}
+
+.about-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  display: block;
+}
+
+.play-button-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px; /* Size of the circle */
+  height: 80px; /* Size of the circle */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.play-button-overlay:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.play-button-overlay .fas.fa-play {
+  color: #fff;
+  font-size: 30px; /* Size of the play icon */
+  margin-left: 5px; /* Adjust for triangular play icon visual center */
+}
+
+.about-description {
+  margin-bottom: 20px;
+  color: #666;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Education and Work Experience Items */
+.education-section,
+.work-experience-section {
+  /* No specific container styling needed beyond what's inherited */
+}
+
+.education-item,
+.work-experience-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.initial-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  flex-shrink: 0;
+  margin-right: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Specific colors for initial circles */
+.education-modern-college {
+  background-color: #e74c3c; /* Red color from screenshot */
+}
+
+.education-harvard {
+  background-color: #3498db; /* Blue color from screenshot */
+}
+
+.work-spotify {
+  background-color: #2ecc71; /* Green color from screenshot */
+}
+
+
+/* Vertical line for timeline */
+.education-item:not(:last-child)::before,
+.work-experience-item:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 40px;
+  bottom: -20px;
+  width: 2px;
+  background-color: #ddd;
+  z-index: 0;
+}
+
+.education-info,
+.work-experience-info {
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.education-info h3,
+.work-experience-info h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 20px;
+}
+
+.duration {
+  background-color: #ffe0e0; /* Lighter red for duration background */
+  color: #e74c3c; /* Red text for duration */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.university,
+.company {
+  color: #777;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.description {
+  color: #666;
+  line-height: 1.6;
+}
+
+
+/* Sidebar Container for both sidebar elements */
+.sidebar-container {
+  flex: 1; /* Takes up less space than the main content */
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Space between the info card and contact form */
+}
+
+/* Candidate Info Sidebar Styling */
+.candidate-sidebar-info { /* Renamed class for clarity */
+  /* No specific styling needed here, as the card inside handles it */
+}
+
+.sidebar-info-card {
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between; /* Pushes icon to left, text to right */
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #eee; /* Dashed line as seen in screenshot */
+}
+
+.info-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none; /* No border for the last item */
+}
+
+.info-item i {
+  color: #007bff; /* Icon color */
+  font-size: 18px;
+  margin-right: 15px; /* Space between icon and text */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.info-item p {
+  margin: 0;
+  color: #555;
+  font-size: 15px;
+  flex-grow: 1; /* Allows text to take remaining space */
+  text-align: right; /* Align the text content to the right */
+}
+
+.info-item p strong {
+  color: #333;
+  font-weight: 600;
+  margin-right: 5px; /* Space between strong and span */
+}
+
+.info-item p span {
+  color: #777;
+}
+
+
+/* Sidebar Contact Form */
+.sidebar-contact-form {
+  /* No specific styling needed here, as the card inside handles it */
+}
+
+.contact-us-card {
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.contact-us-card h3 {
+  font-size: 20px;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: calc(100% - 20px); /* Adjust for padding */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.send-message-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.send-message-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .main-content-area {
+    flex-direction: column;
+    padding: 20px; /* Adjust padding for smaller screens */
+    margin: 0 20px; /* Add horizontal margin to prevent touching edges */
+  }
+
+  .candidate-details-section {
+    padding-right: 0;
+  }
+
+  .sidebar-container {
+    flex-direction: column; /* Stack sidebar elements vertically */
+  }
+
+  .employer-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .private-message-btn {
+    margin-left: 0; /* Remove left margin when stacked */
+    margin-top: 15px; /* Add space after details */
+    width: 100%; /* Make button full width */
+  }
+
+  .company-details {
+    margin-left: 0; /* Reset margin */
+    margin-top: 15px; /* Add space below logo */
+  }
+}
+
+@media (max-width: 768px) {
+  .employer-header {
+    padding: 15px;
+  }
+
+  .company-details h2 {
+    font-size: 24px;
+  }
+
+  .main-content-area {
+    padding: 15px;
+    margin: 0 15px; /* Further reduce horizontal margin */
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .about-image-wrapper {
+    height: 250px;
+  }
+
+  .play-button-overlay {
+    width: 60px;
+    height: 60px;
+  }
+
+  .play-button-overlay .fas.fa-play {
+    font-size: 24px;
+  }
+
+  .education-item,
+  .work-experience-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .initial-circle {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .education-item::before,
+  .work-experience-item::before {
+    display: none; /* Hide vertical line on small screens */
+  }
+
+  .education-info,
+  .work-experience-info {
+    padding: 15px;
+  }
+
+  .education-info h3,
+  .work-experience-info h3 {
+    font-size: 18px;
+  }
+
+  .info-item {
+    flex-direction: column; /* Stack icon and text on small screens */
+    align-items: flex-start;
+    text-align: left; /* Reset text alignment for stacked view */
+  }
+
+  .info-item i {
+    margin-bottom: 5px;
+    margin-right: 0; /* Remove margin when stacked */
+  }
+
+  .info-item p {
+    text-align: left; /* Ensure text is left-aligned when stacked */
+  }
+
+  .sidebar-info-card,
+  .contact-us-card {
+    padding: 20px;
+  }
+
+  .contact-us-card h3 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .employer-header {
+    padding: 10px;
+  }
+
+  .company-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .company-details h2 {
+    font-size: 20px;
+  }
+
+  .company-details p {
+    font-size: 13px;
+  }
+
+  .private-message-btn {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+
+  .main-content-area {
+    padding: 10px;
+    margin: 0 10px;
+  }
+
+  .section-title {
+    font-size: 18px;
+  }
+
+  .about-image-wrapper {
+    height: 200px;
+  }
+
+  .about-description {
+    font-size: 14px;
+  }
+
+  .initial-circle {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+}

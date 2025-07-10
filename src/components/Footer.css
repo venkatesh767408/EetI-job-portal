@@ -1,0 +1,35 @@
+
+ /* ====== Footer Container ====== *
+/* .footer {
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 20px 15px;
+  font-size: 14px;
+  color: #777;
+  margin-top: 50px;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Optional: Make footer stick to bottom if content is short *
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  margin-top: auto;
+} */
+.footer {
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+  color: #777;
+  margin-top: 50px;
+}

@@ -1,21 +1,34 @@
-import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from './pages/Home'
-import Jobspage from './pages/Jobs.jsx'
-import "./App.css";
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import CandidatesList from './pages/CandidatesList.jsx';
+import CandidatesSingle from './pages/CandidatesSingle.jsx';
+import CandidatesDashboard from './pages/CandidatesDb.jsx';
+import CompanyProfile from './pages/CompanyProfile';
+// import ManageJobs from './pages/ManageJobs'; // Import the new component
+;
+import './App.css';
+import ManageJobs from './pages/ManageJobs.JSX';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Jobspage" element={<Jobspage />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <Router>
+      <div className="app-wrapper">
+        <Navbar />
+        <div className="content-wrapper">
+          <Routes>
+            <Route path="/candidates/list" element={<CandidatesList />} />
+            <Route path="/candidates/single" element={<CandidatesSingle />} />
+            <Route path="/candidates/dashboard" element={<CandidatesDashboard />} />
+            <Route path="/employers/profile" element={<CompanyProfile />} />
+            <Route path="/employers/manage-jobs" element={<ManageJobs />} /> {/* New Route */}
+          </Routes>
+        </div>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
