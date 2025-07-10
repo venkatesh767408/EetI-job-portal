@@ -7,7 +7,8 @@ import CandidatesList from './pages/CandidatesList.jsx';
 import CandidatesSingle from './pages/CandidatesSingle.jsx';
 import CandidatesDashboard from './pages/CandidatesDb.jsx';
 import CompanyProfile from './pages/MyProfile.jsx';
-// import ManageJobs from './pages/ManageJobs'; // Import the new component
+import Messages from './pages/Messages.jsx';
+
 ;
 import './App.css';
 import ManageJobs from './pages/ManageJobs.JSX';
@@ -22,8 +23,10 @@ function App() {
             <Route path="/candidates/list" element={<CandidatesList />} />
             <Route path="/candidates/single" element={<CandidatesSingle />} />
             <Route path="/candidates/dashboard" element={<CandidatesDashboard />} />
-            <Route path="/employers/profile" element={<CompanyProfile />} />
-            <Route path="/employers/manage-jobs" element={<ManageJobs />} /> {/* New Route */}
+            <Route path="/candidates/profile" element={<CompanyProfile />} />
+            <Route path="/candidates/manage-jobs" element={<ManageJobs />} /> {/* New Route */}
+            <Route path="/candidates/messages" element={<Messages />} /> {/* New Route */}
+            
           </Routes>
         </div>
         <Footer />

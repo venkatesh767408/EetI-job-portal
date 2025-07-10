@@ -30,15 +30,15 @@ const CandidatesDashboard = () => {
       <div className="dashboard-container">
      <aside className="dashboard-sidebar">
   <ul>
-    <li><NavLink to="/employers/dashboard" className={({ isActive }) => isActive ? 'active' : ''}><i className="fas fa-home"></i> Dashboard</NavLink></li>
-    <li><NavLink to="/employers/profile" className={({ isActive }) => isActive ? 'active' : ''}><i className="fas fa-building"></i> My Profile</NavLink></li>
+    <li><NavLink to="/candidates/list" className={({ isActive }) => isActive ? 'active' : ''}><i className="fas fa-home"></i> Dashboard</NavLink></li>
+    <li><NavLink to="/candidates/profile"className={({ isActive }) => isActive ? 'active' : ''}><i className="fas fa-building"></i> My Profile</NavLink></li>
     <li><NavLink to="#"><i className="fas fa-paper-plane"></i>My Resume</NavLink></li>
-<li><NavLink to="/employers/manage-jobs" className={({ isActive }) => isActive ? 'active' : ''}><i className="fas fa-tasks"></i>Applied Jobs</NavLink></li> {/* Updated NavLink */}
+<li><NavLink to="/candidates/manage-jobs" className={({ isActive }) => isActive ? 'active' : ''}><i className="fas fa-tasks"></i>Applied Jobs</NavLink></li> {/* Updated NavLink */}
     <li><NavLink to="#"><i className="fas fa-users"></i>Job Alerts</NavLink></li>
     <li><NavLink to="#"><i className="fas fa-bookmark"></i> Shortlisted Jobs</NavLink></li>
     <li><NavLink to="#"><i className="fas fa-bookmark"></i>CV Manager</NavLink></li>
     <li><NavLink to="#"><i className="fas fa-box"></i> Packages</NavLink></li>
-    <li><NavLink to="#"><i className="fas fa-envelope"></i> Messages</NavLink></li>
+    <li><NavLink to="/candidates/messages"><i className="fas fa-envelope"></i> Messages</NavLink></li>
     <li><NavLink to="#"><i className="fas fa-bell"></i>Change Password</NavLink></li>
     <li><NavLink to="#"><i className="fas fa-bell"></i>Logout</NavLink></li>
   </ul>

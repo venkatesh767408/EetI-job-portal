@@ -1,8 +1,32 @@
 // CompanyProfile.js (Updated for single-select Industry Type)
-import React from 'react';
+
 import './MyProfile.css'; // Make sure your CSS file is correctly linked
+import React, { useState, useEffect } from "react";
+import "./Location.css";
+
 
 const MyProfile = () => {
+  const [location, setLocation] = useState({ latitude: null, longitude: null });
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setLocation({
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+          });
+        },
+        (err) => {
+          setError("Unable to retrieve location. Please enable location services.");
+        }
+      );
+    } else {
+      setError("Geolocation is not supported by your browser.");
+    }
+  }, []);
+
   return (
     <div className="company-profile-container">
       <h2>My Profile!</h2>
@@ -23,7 +47,7 @@ const MyProfile = () => {
             </small>
           </div>
 
-          
+
         </div>
 
         {/* Company Information Section */}
@@ -69,23 +93,27 @@ const MyProfile = () => {
             <label htmlFor="elvl">Education Levels</label>
             <input type="text" id="elvl" placeholder="Certificate" />
           </div>
-          
+          <div className="form-group">
+            <label htmlFor="lang">Languages</label>
+            <input type="text" id="lang" placeholder="Certificate" />
+          </div>
+
           {/* Industry Type - NOW A SINGLE-SELECT DROPDOWN */}
           <div className="form-group">
-            <label htmlFor="industryType">Industry Type</label>
+            <label htmlFor="industryType">Categories</label>
             <select id="industryType"> {/* Removed 'multiple' attribute */}
-              <option value="">Select industry</option> {/* Changed text */}
+              <option value="">Digital & Creative</option> {/* Changed text */}
               <option value="banking">Banking</option>
-              <option value="digital">Digital</option>
               <option value="retail">Retail</option>
+              <option value="technology">Human Resources</option>
+              <option value="education">Management</option>
+              <option value="other">Accounting & Finance</option>
+              <option value="digital">Digital</option>
               <option value="healthcare">Healthcare</option>
-              <option value="technology">Technology</option>
-              <option value="education">Education</option>
-              <option value="other">Other</option>
             </select>
             {/* <small>Hold Ctrl (Windows) or Cmd (Mac) to select multiple options.</small> Removed this helper text */}
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="teamSize">Team Size</label>
             <select id="teamSize">
               <option value="">Select team size</option>
@@ -96,7 +124,7 @@ const MyProfile = () => {
               <option value="501-1000">501-1000 employees</option>
               <option value="1000+">1000+ employees</option>
             </select>
-          </div>
+          </div> */}
           <div className="form-group">
             <label htmlFor="searchListing">Allow Search Listing?</label>
             <select id="searchListing">
@@ -104,52 +132,88 @@ const MyProfile = () => {
               <option value="no">No</option>
             </select>
           </div>
-          <div className="form-group">
-            <label htmlFor="establishmentDate">Establishment Date (or Time Zone)</label>
-            <input type="text" id="establishmentDate" placeholder="e.g., 2020 or EST" />
+          {/* <div className="form-group">
+            <label htmlFor="Description">Description</label>
+            <textarea placeholder="Spent several years working on sheep on Wall Street. Had moderate success investing in Yugo's on Wall Street. Managed a small team buying and selling Pogo sticks for farmers. Spent several years licensing licorice in West Palm Beach, FL. Developed several new methods for working it banjos in the aftermarket. Spent a weekend importing banjos in West Palm Beach, FL.In this position, the Software Engineer collaborates with Evention's Development team to continuously enhance our current software solutions as well as create new solutions to eliminate the back-office operations and management challenges present"></textarea>
           </div>
+          <button>Save</button> */}
+          <div className="form-section">
+            <h4>Description</h4>
+            <div className="form-group">
+              <label htmlFor="aboutCompanyText">
+                Description
+              </label>
+              <textarea
+                id="aboutCompanyText"
+                rows="8" // Increased rows for a larger textbox
+                placeholder="Spent several years working on sheep on Wall Street. Had moderate success investing in Yugo's on Wall Street. Managed a small team buying and selling Pogo sticks for farmers. Spent several years licensing licorice in West Palm Beach, FL. Developed several new methods for working it banjos in the aftermarket. Spent a weekend importing banjos in West Palm Beach, FL.In this position, the Software Engineer collaborates with Evention's Development team to continuously enhance our current software solutions as well as create new solutions to eliminate the back-office operations and management challenges present"></textarea>
+            </div>
+            <button>Save</button>
+          </div>
+        </div>
+
+            <div className="form-section">
+          <h4>Social Network</h4>
+          <div className="form-group">
+            <label htmlFor="companyEmail">Facebook</label>
+            <input type="text" id="text" placeholder="www.facebook.com/Invision" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="phone">Twitter</label>
+            <input type="text" id="phone" placeholder="" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="website">Linkedin</label>
+            <input type="text" id="website" placeholder="" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="address">Google Plus</label>
+            <input type="text" id="address" placeholder="" />
+          </div>
+          <button>Save</button>
         </div>
 
         {/* Contact Details Section */}
         <div className="form-section">
-          <h4>Contact Details</h4>
+          <h4>Contact Information</h4>
           <div className="form-group">
-            <label htmlFor="companyEmail">Company Email</label>
-            <input type="email" id="companyEmail" placeholder="name@example.com" />
+            <label htmlFor="companyEmail">Country</label>
+            <input type="text" id="text" placeholder="Australia" />
           </div>
           <div className="form-group">
-            <label htmlFor="phone">Phone Number</label>
-            <input type="tel" id="phone" placeholder="+1234567890" />
+            <label htmlFor="phone">City</label>
+            <input type="text" id="phone" placeholder="Melbourne" />
           </div>
           <div className="form-group">
-            <label htmlFor="website">Website</label>
-            <input type="url" id="website" placeholder="https://www.yourcompany.com" />
+            <label htmlFor="website">Complete Address</label>
+            <input type="text" id="website" placeholder="329 Queensberry Street, North Melbourne VIC 3051, Australia." />
           </div>
           <div className="form-group">
-            <label htmlFor="address">Address</label>
-            <input type="text" id="address" placeholder="Street, City, State, Zip" />
+            <label htmlFor="address">Find On Map</label>
+            <input type="text" id="address" placeholder="329 Queensberry Street, North Melbourne VIC 3051, Australia." />
           </div>
+          <button>Search Location</button>
         </div>
 
-        {/* "About Company" Section */}
-        <div className="form-section">
-          <h4>About Company</h4>
-          <div className="form-group">
-            <label htmlFor="aboutCompanyText">
-              Share a detailed description of your company, or general text you might use for social media profiles/bios.
-            </label>
-            <textarea
-              id="aboutCompanyText"
-              rows="8" // Increased rows for a larger textbox
-              placeholder="Tell your story, your mission, or social media friendly content..."
-            ></textarea>
-          </div>
-        </div>
-
-        <button className="save-button">Save Profile</button>
+       
       </div>
+
+      
+    <div className="location-container">
+      <h1>Your Current Location</h1>
+      {error ? (
+        <p className="error">{error}</p>
+      ) : (
+        <div>
+          <p>Latitude: {location.latitude}</p>
+          <p>Longitude: {location.longitude}</p>
+        </div>
+      )}
+    </div>
     </div>
   );
 };
+
+
 
 export default MyProfile;
