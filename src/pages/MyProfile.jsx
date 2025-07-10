@@ -30,13 +30,46 @@ const MyProfile = () => {
         <div className="form-section">
           <h4>Contact Information</h4>
           <div className="form-group">
-            <label htmlFor="companyName">Company Name</label>
-            <input type="text" id="companyName" placeholder="Enter company name" />
+            <label htmlFor="companyName">Full Name</label>
+            <input type="text" id="companyName" placeholder="Enter Your full name" />
           </div>
           <div className="form-group">
-            <label htmlFor="tagline">Tagline</label>
-            <input type="text" id="tagline" placeholder="Enter company tagline" />
+            <label htmlFor="tagline">Job Title</label>
+            <input type="text" id="tagline" placeholder="UI Designer" />
           </div>
+          <div className="form-group">
+            <label htmlFor="phone">Phone</label>
+            <input type="text" id="phone" placeholder="0 123 4566 7890" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="mail">Email address</label>
+            <input type="text" id="mail" placeholder="creativelayers" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="website">Website</label>
+            <input type="text" id="website" placeholder="www.jerome.com" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="csal">Currrent Salary($)</label>
+            <input type="text" id="csal" placeholder="40-70 K" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="esal">Expected Salary($)</label>
+            <input type="text" id="esal" placeholder="120-350 K" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="exp">Experience</label>
+            <input type="text" id="esal" placeholder="5-10 Years" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="age">Age</label>
+            <input type="text" id="age" placeholder="23- 27 Years" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="elvl">Education Levels</label>
+            <input type="text" id="elvl" placeholder="Certificate" />
+          </div>
+          
           {/* Industry Type - NOW A SINGLE-SELECT DROPDOWN */}
           <div className="form-group">
             <label htmlFor="industryType">Industry Type</label>
