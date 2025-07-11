@@ -21,6 +21,7 @@ const Navbar = () => {
         <ul className="nav-links">
           <li><Link to="/">Home</Link></li>
           <li><Link to="/find-jobs">Find Jobs</Link></li>
+          <li><Link to="/find-jobs">Employers ▾</Link></li>
 
            {/* ✅ Toggle onClick */}
            <li className="dropdown">

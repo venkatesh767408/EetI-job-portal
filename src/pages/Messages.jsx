@@ -1,22 +1,23 @@
 
+// Messages.jsx
 import React from 'react';
 import './Messages.css';
 
-const Messages = () => {
-  const users = [
-    { name: 'Darlene Robertson', unread: 0 },
-    { name: 'Jane Cooper', unread: 2 },
-    { name: 'Arlene McCoy', unread: 2 },
-    { name: 'Albert Flores', unread: 0 },
-    { name: 'Williamson', unread: 2 },
-    { name: 'Kristin Watson', unread: 0 },
-    { name: 'Annette Black', unread: 0 },
-    { name: 'Jacob Jones', unread: 0 }
-  ];
+const users = [
+  { name: 'Darlene Robertson', unread: 0, image: '../assets/darlene.png' },
+  { name: 'Jane Cooper', unread: 2, image: '/avatars/jane.png', badgeColor: 'blue' },
+  { name: 'Arlene McCoy', unread: 2, image: '/avatars/arlene.png', badgeColor: 'green' },
+  { name: 'Albert Flores', unread: 0, image: '/avatars/albert.png' },
+  { name: 'Williamson', unread: 2, image: '/avatars/williamson.png', badgeColor: 'yellow' },
+  { name: 'Kristin Watson', unread: 0, image: '/avatars/kristin.png' },
+  { name: 'Annette Black', unread: 0, image: '/avatars/annette.png' },
+  { name: 'Jacob Jones', unread: 0, image: '/avatars/jacob.png' },
+];
 
+const Messages = () => {
   return (
     <div className="messages-container">
-      {/* Left Sidebar */}
+      {/* Sidebar */}
       <div className="messages-sidebar">
         <h2>Messages!</h2>
         <p>Ready to jump back in?</p>
@@ -24,23 +25,33 @@ const Messages = () => {
         <div className="user-list">
           {users.map((user, idx) => (
             <div key={idx} className="user-card">
-              <div className="avatar"></div>
+              <div
+                className="avatar"
+                style={{ backgroundImage: `url(${user.image})` }}
+              ></div>
               <div className="user-info">
                 <div className="user-name">{user.name}</div>
                 <div className="user-role">Head of Development</div>
               </div>
               <span className="time">35 mins</span>
-              {user.unread > 0 && <span className="badge">{user.unread}</span>}
+              {user.unread > 0 && (
+                <span className={`badge ${user.badgeColor || ''}`}>
+                  {user.unread}
+                </span>
+              )}
             </div>
           ))}
         </div>
       </div>
 
-      {/* Right Chat Window */}
+      {/* Chat Section */}
       <div className="chat-section">
         <div className="chat-header">
           <div className="chat-user">
-            <div className="avatar" />
+            <div
+              className="avatar"
+              style={{ backgroundImage: `url(/avatars/arlene.png)` }}
+            />
             <div>
               <strong>Arlene McCoy</strong>
               <p className="status">Active</p>
@@ -51,21 +62,36 @@ const Messages = () => {
 
         <div className="chat-body">
           <div className="message-row">
-            <div className="avatar" />
+            <div
+              className="avatar"
+              style={{ backgroundImage: `url(/avatars/albert.png)` }}
+            />
             <div className="message other">
-              <p>How likely are you to recommend our company to your friends and family?</p>
+              <p>
+                How likely are you to recommend our company to your friends and
+                family?
+              </p>
             </div>
           </div>
 
           <div className="message-row you">
-            <div className="message">
-              <p>Hey there, we’re just writing to let you know that you’ve been subscribed to a repository on GitHub.</p>
+            <div className="message you">
+              <p>
+                Hey there, we’re just writing to let you know that you’ve been
+                subscribed to a repository on GitHub.
+              </p>
             </div>
-            <div className="avatar" />
+            <div
+              className="avatar"
+              style={{ backgroundImage: `url(/avatars/kristin.png)` }}
+            />
           </div>
 
           <div className="message-row">
-            <div className="avatar" />
+            <div
+              className="avatar"
+              style={{ backgroundImage: `url(/avatars/cameron.png)` }}
+            />
             <div className="message other">
               <p>Ok, Understood!</p>
             </div>
@@ -77,13 +103,9 @@ const Messages = () => {
           <button>Send Message</button>
         </div>
 
-        <div className="footer">
-          <p>© 2025 Superio by <span>ib-themes</span>. All Rights Reserved.</p>
-        </div>
       </div>
     </div>
   );
 };
 
 export default Messages;
-

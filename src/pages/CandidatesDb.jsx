@@ -30,7 +30,7 @@ const CandidatesDashboard = () => {
       <div className="dashboard-container">
      <aside className="dashboard-sidebar">
   <ul>
-    <li><NavLink to="/candidates/list" className={({ isActive }) => isActive ? 'active' : ''}><i className="fas fa-home"></i> Dashboard</NavLink></li>
+    <li><NavLink to="/candidates/dashboard" className={({ isActive }) => isActive ? 'active' : ''}><i className="fas fa-home"></i> Dashboard</NavLink></li>
     <li><NavLink to="/candidates/profile"className={({ isActive }) => isActive ? 'active' : ''}><i className="fas fa-building"></i> My Profile</NavLink></li>
     <li><NavLink to="#"><i className="fas fa-paper-plane"></i>My Resume</NavLink></li>
 <li><NavLink to="/candidates/manage-jobs" className={({ isActive }) => isActive ? 'active' : ''}><i className="fas fa-tasks"></i>Applied Jobs</NavLink></li> {/* Updated NavLink */}

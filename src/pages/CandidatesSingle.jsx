@@ -155,10 +155,10 @@ const CandidatesSingle = () => {
             <div className="contact-us-card">
               <h3>Contact Us</h3>
               <div className="form-group">
-                <input type="text" placeholder="Your Name" />
+                <input type="text" placeholder="Your Name" required/>
               </div>
               <div className="form-group">
-                <input type="email" placeholder="Email Address" />
+                <input type="email" placeholder="Email Address" required />
               </div>
               <div className="form-group">
                 <textarea placeholder="Message"></textarea>

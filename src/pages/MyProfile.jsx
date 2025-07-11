@@ -3,6 +3,8 @@
 import './MyProfile.css'; // Make sure your CSS file is correctly linked
 import React, { useState, useEffect } from "react";
 import "./Location.css";
+import 'leaflet/dist/leaflet.css';
+
 
 
 const MyProfile = () => {
